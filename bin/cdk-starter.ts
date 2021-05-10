@@ -3,6 +3,7 @@ import * as cdk from '@aws-cdk/core';
 import {CdkStarterStack} from '../lib/cdk-starter-stack';
 
 const app = new cdk.App();
+
 new CdkStarterStack(app, 'cdk-stack', {
   stackName: 'cdk-stack',
   env: {

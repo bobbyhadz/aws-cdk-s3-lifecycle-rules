@@ -1,8 +1,7 @@
-# Article name here
+# Configure S3 Lifecycle Rules in AWS CDK
 
 A repository for an article on
-[bobbyhadz.com](https://bobbyhadz.com/blog/aws-s3-presigned-url-react)
-`<- Update Link`
+[bobbyhadz.com](https://bobbyhadz.com/blog/aws-cdk-s3-lifecycle-rules)
 
 ## How to Use
 
