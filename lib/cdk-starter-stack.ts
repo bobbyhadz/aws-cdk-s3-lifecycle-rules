@@ -11,6 +11,7 @@ export class CdkStarterStack extends cdk.Stack {
       // 👇 set up lifecycle rules
       lifecycleRules: [
         {
+          // 👇 optionally only apply rules to objects where the prefix matches
           // prefix: 'data/',
           abortIncompleteMultipartUploadAfter: cdk.Duration.days(90),
           expiration: cdk.Duration.days(365),
@@ -32,6 +33,18 @@ export class CdkStarterStack extends cdk.Stack {
               transitionAfter: cdk.Duration.days(180),
             },
           ],
+        },
+      ],
+    });
+
+    // 👇 add a life cycle rule after bucket creation
+    s3Bucket.addLifecycleRule({
+      prefix: 'logs/',
+      expiration: cdk.Duration.days(90),
+      transitions: [
+        {
+          storageClass: s3.StorageClass.ONE_ZONE_INFREQUENT_ACCESS,
+          transitionAfter: cdk.Duration.days(60),
         },
       ],
     });
